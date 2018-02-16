@@ -1,3 +1,3 @@
 # Phoenix Sandbox
  - sandbox for learning Phoenix
- - code snippets and exercises from Chris McCord and Bruce Tate's "Programming Phoenix" book
+ - code snippets and exercises from [Programming Phoenix](https://pragprog.com/book/phoenix/programming-phoenix) by Chris McCord, Bruce Tate, and José Valim
