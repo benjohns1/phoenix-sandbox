@@ -18,6 +18,7 @@
           <ul class="nav nav-pills pull-right">
             <li><a href="/">Home</a></li>
             <li><a href="/users">Users</a></li>
+            <li><a href="/users/new">New User</a></li>
           </ul>
         </nav>
         <h1>Rumbl</h1>
