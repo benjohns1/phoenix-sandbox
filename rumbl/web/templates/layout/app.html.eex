@@ -15,13 +15,18 @@
     <div class="container">
       <header class="header">
         <nav role="navigation">
-          <ul class="nav nav-pills pull-right">
-            <li><a href="/">Home</a></li>
-            <li><a href="/users">Users</a></li>
-            <li><a href="/users/new">New User</a></li>
-          </ul>
+          <ol class="breadcrumb text-right">
+            <%= if @current_user do %>
+              <li><%= link "Users", to: user_path(@conn, :index) %></li>
+              <li><%= @current_user.username %></li>
+              <li><%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete" %></li>
+            <%= else %>
+              <li><%= link "Register", to: user_path(@conn, :new) %></li>
+              <li><%= link "Log in", to: session_path(@conn, :new) %></li>
+            <% end %>
+          </ol>
         </nav>
-        <h1>Rumbl</h1>
+        <h1><%= link "Rumbl", to: page_path(@conn, :index) %></h1>
       </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
