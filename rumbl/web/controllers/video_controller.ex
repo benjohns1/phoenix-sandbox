@@ -1,7 +1,9 @@
 defmodule Rumbl.VideoController do
   use Rumbl.Web, :controller
-
   alias Rumbl.Video
+  alias Rumbl.Category
+
+  plug :load_categories when action in [:new, :create, :edit, :update]
 
   def action(conn, _) do
     # change controller function signature: add 'user' as third arg and populate with session's currently logged-in user
@@ -76,5 +78,14 @@ defmodule Rumbl.VideoController do
 
   defp user_videos(user) do
     assoc(user, :videos)
+  end
+
+  defp load_categories(conn, _) do
+    categories = 
+      Category
+      |> Category.alphabetical
+      |> Category.names_and_ids
+      |> Repo.all
+    assign(conn, :categories, categories)
   end
 end
