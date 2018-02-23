@@ -16,3 +16,6 @@
  1. hit the Windows key and search for "Developer Command Prompt for VS2015"
  1. cd into the "VC" directory and run `vcvarsall.bat amd64`
  1. cd over to your project, run `mix deps.get` and `mix deps.compile`
+ 
+ The version 1.0 bcrypt library also can cause problems when trying to generate random bytes and hashes, so downgrade to version 0.12:
+ `{:bcrypt_elixir, "~> 0.12"}`

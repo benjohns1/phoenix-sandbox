@@ -13,7 +13,13 @@ config :logger, level: :warn
 config :rumbl, Rumbl.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
-  password: "postgres",
+  password: "uLxmEg-CpG2qG9ljJrykwBnjpyKlA32z",
   database: "rumbl_test",
   hostname: "localhost",
+  port: 6543,
   pool: Ecto.Adapters.SQL.Sandbox
+
+# Lighten up on password hashing rounds to speed up testing
+config :comeonin,
+  bcrypt_log_rounds: 2,
+  pbkdf2_rounds: 1
