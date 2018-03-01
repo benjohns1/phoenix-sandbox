@@ -49,7 +49,7 @@ defmodule Rumbl.VideoChannel do
   end
 
   defp compute_additional_info(ann, socket) do
-    results = Rumbl.InfoSys.compute(ann.body, limit: 1, timeout: 10_000)
+    results = InfoSys.compute(ann.body, limit: 1, timeout: 10_000)
     for result <- results do
       attrs = %{url: result.url, body: result.text, at: ann.at}
       info_changeset = 
