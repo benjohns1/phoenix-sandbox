@@ -1,4 +1,5 @@
 # HelloPhx
+Sample app from the Phoenix 1.3 Guides
 
 To start your Phoenix server:
 
