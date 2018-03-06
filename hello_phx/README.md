@@ -14,7 +14,7 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
   1. `mix phx.new <appname>`
   1. `cd <appname>`
-  1. # configure database in config/dev.exs
+  1. \# configure database in config/dev.exs
   1. `mix ecto.create`
   1. `mix phx.server` # start server
   1. `iex -S mix phx.server` # start server in IEx
