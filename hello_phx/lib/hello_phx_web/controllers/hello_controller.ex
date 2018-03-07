@@ -2,7 +2,9 @@ defmodule HelloPhxWeb.HelloController do
   use HelloPhxWeb, :controller
 
   def index(conn, _params) do
-    render conn, :index
+    conn
+    |> put_layout(:bare)
+    |> render(:index)
   end
 
   def show(conn, %{"messenger" => messenger}) do
